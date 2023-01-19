@@ -3,7 +3,6 @@ import Book from "./ui/Book";
 import { books } from "../data.js";
 
 const Featured = () => {
-  console.log(books);
   return (
     <section id="features">
       <div className="container">
@@ -15,7 +14,7 @@ const Featured = () => {
                 .filter((book) => book.rating === 5)
                 .slice(0, 4)
                 .map((book) => (
-                  <Book book={book} key={book.id}  />
+                  <Book book={book} key={book.id} />
                 ))}
             </div>
           </h2>

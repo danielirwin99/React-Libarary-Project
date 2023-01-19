@@ -1,36 +1,24 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Link } from "react-router-dom";
+import Price from "./Price";
+import Rating from "./Rating";
 
 const Book = ({ book }) => {
   return (
     <div className="book">
-      <a href="">
+      <Link to="/books/1">
         <figure className="book__img--wrapper">
           <img className="book__img" src={book.url} alt="" />
         </figure>
-      </a>
+      </Link>
       <div className="book__title">
-        <a href="/" className="book__title--link">
+        <Link to="/books/1" className="book__title--link">
           Cracking the Coding Interview
-        </a>
+        </Link>
       </div>
-      <div className="book__ratings">
-        {new Array(5).fill(0).map((_, index) => (
-          <FontAwesomeIcon icon="star" key={index} />
-        ))}
-      </div>
-      <div className="book__price">
-        {book.salePrice ? (
-          <>
-            <span className="book__price--normal">
-              ${book.originalPrice.toFixed(2)}
-            </span>
-            ${book.salePrice}
-          </>
-        ) : (
-          <>$ {book.originalPrice.toFixed(2)}</>
-        )}
-      </div>
+      <Rating rating={book.rating} />
+      <Price salePrice={book.salePrice} originalPrice={book.originalPrice} />
     </div>
   );
 };

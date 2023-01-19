@@ -13,6 +13,7 @@ import {
   faTags,
   faStar,
   faStarHalfAlt,
+  faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -24,6 +25,7 @@ library.add(
   faTags,
   faStar,
   faStarHalfAlt,
+  faArrowLeft
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
