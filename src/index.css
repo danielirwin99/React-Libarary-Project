@@ -376,6 +376,7 @@ FEATURES
   width: 25%;
   padding: 24px;
   transition: all 300ms ease;
+  text-align: start;
 }
 
 .book:hover {

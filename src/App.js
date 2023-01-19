@@ -15,12 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/books" element={<Books books={books} />} />
-          <Route
-            path="books/1"
-            element={
-              <BookInfo books={books} /*addToCart={addToCart} cart={cart}*/ />
-            }
-          />
+          <Route path="/books/:id" render={() => <BookInfo books={books} />} />
         </Routes>
         <Footer />
       </div>

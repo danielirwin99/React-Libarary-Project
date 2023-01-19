@@ -1,16 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Price from "../Components/ui/Price";
 import Rating from "../Components/ui/Rating";
 
 const BookInfo = ({ books }) => {
+  const { id } = useParams();
+
   return (
-    <div className="books__body">
-      <main id="id">
+    <div id="books__body">
+      <main id="books__main">
         <div className="books__container">
           <div className="row">
-            <div className="books_selected--top">
+            <div className="book__selected--top">
               <Link to="/books" className="book__link">
                 <FontAwesomeIcon icon="arrow-left" />
               </Link>
@@ -23,6 +25,7 @@ const BookInfo = ({ books }) => {
                 <img
                   src="https://covers.openlibrary.org/b/id/8091016-L.jpg"
                   alt=""
+                  className="book__selected--img"
                 />
               </figure>
               <div className="book__selected--description">
@@ -34,20 +37,20 @@ const BookInfo = ({ books }) => {
                   <Price originalPrice={50} salePrice={20} />
                 </div>
                 <div className="book__summary">
-                  <div className="book__summary--title">Summary</div>
-                  <p className="book__summary__para">
+                  <h3 className="book__summary--title">Summary</h3>
+                  <p className="book__summary--para">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
                     ducimus minus debitis id porro commodi aperiam magnam vel
                     neque doloribus fuga eos tempore, perspiciatis veniam
                     mollitia dolorem enim eum. Nam.
                   </p>
-                  <p className="book__summary__para">
+                  <p className="book__summary--para">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
                     ducimus minus debitis id porro commodi aperiam magnam vel
                     neque doloribus fuga eos tempore, perspiciatis veniam
                     mollitia dolorem enim eum. Nam.
                   </p>
-                  <p className="book__summary__para">
+                  <p className="book__summary--para">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
                     ducimus minus debitis id porro commodi aperiam magnam vel
                     neque doloribus fuga eos tempore, perspiciatis veniam
@@ -58,13 +61,12 @@ const BookInfo = ({ books }) => {
               </div>
             </div>
           </div>
-          <div className="books__container">
-            <div className="row">
-              <div className="book__selected--top">
-                <h2 className="book__selected--title--top">
-                  Recommended Books
-                </h2>
-              </div>
+        </div>
+
+        <div className="books__container">
+          <div className="row">
+            <div className="book__selected--top">
+              <h2 className="book__selected--title--top">Recommended Books</h2>
             </div>
           </div>
         </div>
