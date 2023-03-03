@@ -12,7 +12,7 @@ const Landing = () => {
             <h2>
               Find your dream book with <span className="purple">Library</span>
             </h2>
-            <Link className="#features" to="">
+            <Link className="#features" to="/books">
               <button className="btn">Browse Books</button>
             </Link>
           </div>
